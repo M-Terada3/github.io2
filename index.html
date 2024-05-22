@@ -4,13 +4,91 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href=".\assets\css\style.css" />
+    <link rel="stylesheet" href=".\assets\style.css" />
     <title>responsive-site</title>
   </head>
   <body>
     <div class="l-wrap">
-      <header></header>
-      <main></main>
+      <header>
+        <div class="l-pcHeader">
+          <div class="l-pcHeader__logo">
+            <a href=""><img src="./assets/img/BrandLogo.png" /></a>
+          </div>
+          <div class="l-pcHeader__nav">
+            <ul>
+              <li><a href="">Product</a></li>
+              <li><a href="">News</a></li>
+              <li><a href="">Shop</a></li>
+              <li><a href="">Support</a></li>
+              <li><a href="">Sustainability</a></li>
+              <li><a href="">Company</a></li>
+              <li><a href="">Contact</a></li>
+            </ul>
+            <div class="l-pcHeader__cartIcon">
+              <a href=""><img src="./assets/img/cart_icon.png" /></a>
+            </div>
+          </div>
+        </div>
+        <div class="l-spHeader">
+          <div id="l-spHeader__hamNav" class="l-spHeader__hamburgerNav">
+            <div class="l-spHeader__btn">
+              <span class="l-spHeader__bar l-spHeader__bar-top"></span>
+              <span class="l-spHeader__bar l-spHeader__bar-middle"></span>
+              <span class="l-spHeader__bar l-spHeader__bar-bottom"></span>
+            </div>
+            <div class="l-spHeader__fixBtn">
+              <span class="l-spHeader__bar l-spHeader__bar-top"></span>
+              <span class="l-spHeader__bar l-spHeader__bar-middle"></span>
+              <span class="l-spHeader__bar l-spHeader__bar-bottom"></span>
+            </div>
+            <nav class="l-spHeader__menuLists">
+              <ul>
+                <li><a href="">Product</a></li>
+                <li><a href="">News</a></li>
+                <li><a href="">Shop</a></li>
+                <li><a href="">Support</a></li>
+                <li><a href="">Sustainability</a></li>
+                <li><a href="">Company</a></li>
+                <li><a href="">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="p-keyVisual">
+          <img class="p-logo" src="./assets/img/BrandLogo.png" />
+        </div>
+        <div class="p-about">
+          <div class="p-about__titleBox">地球と旅する人たちへ</div>
+          <div class="p-about__textBox">
+            molnは、雲を意味します。 国境も言語も気にせずにただよう雲は、
+            理想の旅のひとつのかたちかもしれません。
+            わたしたちは、旅から学んできました。
+            果てしなく遠いと思っていた場所でも、意外とたどりつけること。
+            まったく違うと聞いていた文化にも、似ているところがあること。
+            知らない言葉を話す人とも、一緒に笑いあえること。
+            非日常を求めたり、新しい日常を探したり、みんな行き先は違います。
+            でも、きっと同じ地球のどこか。
+            一人ひとりの旅をかたちづくるために、molnは生まれました。
+          </div>
+        </div>
+        <div class="p-goods">
+          <a href=""
+            ><img class="p-goods__image" src="./assets/img/goods1.jpg"
+          /></a>
+          <div class="p-goods__text">
+            <div class="p-goods__title">ダイニングテーブル</div>
+            <div class="p-goods__detail">
+              木の味を活かした高級感のある作り。細部までこだわった、スタイルを選ばない.Treeのダイニングテーブルです。
+            </div>
+            <div class="p-goods__price">¥79,000（税込）〜</div>
+            <div class="p-goods__more">
+              <a href=""><span>詳細を見る</span></a>
+            </div>
+          </div>
+        </div>
+      </main>
       <footer></footer>
     </div>
   </body>
