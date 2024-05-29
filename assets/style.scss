@@ -13,10 +13,11 @@ $sp: 768px;
 
 body {
   margin: 0;
+  background-color: #e9e0db;
+  font-family: serif;
 }
 
 header {
-
 }
 
 .l-pcHeader {
@@ -30,7 +31,7 @@ header {
     display: none;
   }
 
-  &__logo img{
+  &__logo img {
     width: 130px;
     margin: 0 30px;
   }
@@ -54,13 +55,12 @@ header {
     text-decoration: none;
   }
 
-  &__cartIcon img{
+  &__cartIcon img {
     width: 30px;
     margin: 12px 30px 0;
   }
 }
 .l-spHeader {
-
   @include pc {
     display: none;
   }
@@ -135,5 +135,183 @@ header {
 }
 
 .p-logo {
+}
+
+.p-about {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  color: #704639;
+  background-color: #ddd6cb;
+  padding: 150px 30px 200px;
+
+  &__titleBox {
+    font-size: 30px;
+    writing-mode: vertical-rl;
+    padding-left: 10px;
+  }
+
+  &__textBox {
+    width: 60vw;
+    font-size: 18px;
+    padding-right: 30px;
+  }
+}
+
+.p-goods {
+  display: flex;
+
+  &__image {
+    width: 50vw;
+    vertical-align: bottom;
+  }
+
+  &__text {
+    color: #704639;
+  }
+}
+
+.p-more {
+  position: relative;
+
+  &__list {
+    padding-inline-start: 0;
+  }
+
+  &__list li {
+    list-style: none;
+  }
+
+  &__list li img {
+    width: 90vw;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__btn {
+    display: flex;
+  }
+
+  &__prevBtn {
+    position: absolute;
+    top: 195px;
+    left: 50px;
+    color: #fff;
+    font-size: 50px;
+  }
+
+  &__nextBtn {
+    position: absolute;
+    top: 195px;
+    right: 50px;
+    color: #fff;
+    font-size: 50px;
+  }
+}
+
+.p-slidePost {
+  &__image {
+    width: 40vw;
+    height: 400px;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+}
+
+.p-store {
+  display: flex;
+
+  &__image {
+    width: 50vw;
+    vertical-align: bottom;
+  }
+
+  &__about {
+    width: 50vw;
+    background-color: #ddd6cb;
+  }
+
+  &__detail {
+    color: #704639;
+  }
+}
+
+.l-footer {
+  background-color: #a58b77;
+  color: #fff;
+  padding: 60px;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__leftBox {
+    display: flex;
+    margin-right: 60px;
+  }
+
+  &__leftBox ul li {
+    list-style: none;
+  }
+
+  &__leftBox ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  &__rightBox {
+  }
+
+  &__iconBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 170px;
+  }
+
+  &__iconList {
+    list-style: none;
+    display: flex;
+    gap: 2vw;
+  }
+
+  &__iconList img {
+    width: 30px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__bottomBox {
+    width: 70vw;
+  }
+
+  &__bottomList {
+    display: flex;
+    gap: 3vw;
+  }
+
+  &__bottomList li {
+    list-style: none;
+  }
+
+  &__bottomList li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+  }
+}
+
+.icon-tabler {
 
 }
