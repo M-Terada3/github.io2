@@ -323,7 +323,7 @@ header {
   display: flex;
   align-items: center;
   height: 340px;
-  // overflow: hidden;
+  overflow: hidden;
 
   &__list {
     display: flex;
@@ -339,6 +339,10 @@ header {
       transform: translateX(-100%);
     }
   }
+
+  // &__paused:hover .slideshow {
+  //   animation-play-state: paused;
+  // }
 
   &__list li {
     list-style: none;

@@ -290,6 +290,7 @@ body {
   display: flex;
   align-items: center;
   height: 340px;
+  overflow: hidden;
 }
 .p-slidePost__list {
   display: flex;
