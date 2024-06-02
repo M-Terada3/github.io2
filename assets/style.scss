@@ -24,15 +24,16 @@ header {
   width: 100%;
   position: absolute;
   display: flex;
-  justify-content: space-between;
-  padding-top: 30px;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 24px;
 
   @include sp {
     display: none;
   }
 
   &__logo img {
-    width: 130px;
+    width: 180px;
     margin: 0 30px;
   }
 
@@ -48,6 +49,8 @@ header {
 
   &__nav li {
     list-style: none;
+    font-size: 16px;
+    letter-spacing: .07777em;
   }
 
   &__nav a {
@@ -134,9 +137,6 @@ header {
   justify-content: center;
 }
 
-.p-logo {
-}
-
 .p-about {
   display: flex;
   justify-content: center;
@@ -146,7 +146,7 @@ header {
   position: relative;
 
   &__titleBox {
-    font-size: 30px;
+    font-size: 36px;
     writing-mode: vertical-rl;
     letter-spacing: .07777em;
     font-weight: inherit;
@@ -204,7 +204,8 @@ header {
   }
 
   &__title {
-    line-height: 2;
+    font-size: 30px;
+    line-height: 3;
   }
 
   &__detail {
@@ -218,7 +219,9 @@ header {
   }
 
   &__more {
+    position: relative;
     width: 36%;
+    height: 30px;
     margin-top: 80px;
     border: 1px solid #704639;
     text-align: center;
@@ -228,12 +231,156 @@ header {
   &__more a {
     text-decoration: none;
     color: #704639;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 44px;
+    line-height: 44px;
   }
 }
 
 .p-more {
-  position: relative;
   margin: 0 auto;
+}
+
+.slide-wrapper {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.next {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: 30px;
+  bottom: 50%;
+  z-index: 10;
+  cursor: pointer;
+  border-top: solid 1.5px #fff;
+  border-right: solid 1.5px #fff;
+  -webkit-transform: rotate(45deg) translateY(50%);
+  transform: rotate(45deg) translateY(50%);
+}
+.prev {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 65px;
+  bottom: 50%;
+  z-index: 10;
+  cursor: pointer;
+  border-top: solid 1.5px #fff;
+  border-right: solid 1.5px #fff;
+  -webkit-transform: rotate(-135deg) translateY(-50%);
+  transform: rotate(-135deg) translateY(-50%);
+}
+
+.indicator {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  column-gap: 18px;
+  justify-content: center;
+  padding-inline-start: 0;
+}
+.indicator li {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  list-style: none;
+  border: 1.5px solid #704639;
+  cursor: pointer;
+}
+.indicator li:first-of-type {
+  background-color: #704639;;
+}
+
+.slide {
+  width: 300%;
+  height: 100%;
+  display: flex;
+  transition: all 0.5s;
+}
+.slide img {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+}
+.slide1 {
+  transform: translateX(0);
+}
+.slide2 {
+  transform: translateX(-33.33%);
+}
+.slide3 {
+  transform: translateX(-66.66%);
+}
+
+.p-slidePost {
+  display: flex;
+  align-items: center;
+  height: 340px;
+  // overflow: hidden;
+
+  &__list {
+    display: flex;
+    padding-inline-start: 0;
+    animation: loop-slide 40s infinite linear 0s both;
+  }
+
+  @keyframes loop-slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  &__list li {
+    list-style: none;
+  }
+
+  &__image {
+    width: 40vw;
+    height: 400px;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+
+  &__more {
+    position: relative;
+    width: 20%;
+    height: 24px;
+    border: 1px solid #704639;
+    text-align: center;
+    padding: 8px 10px;
+    margin: 90px auto 200px
+  }
+
+  &__more a {
+    text-decoration: none;
+    color: #704639;
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 40px;
+    line-height: 40px;
+  }
+}
+
+.p-information {
+  margin: 0 60px 200px;
+  color: #704639;
+
+  &__title {
+    margin-bottom: 30px;
+  }
 
   &__list {
     padding-inline-start: 0;
@@ -241,42 +388,20 @@ header {
 
   &__list li {
     list-style: none;
+    padding: 20px 0;
+    font-size: 16px;
+    letter-spacing: 0.07777em;
   }
 
-  &__list li img {
-    width: 90vw;
-    height: 500px;
-    object-fit: cover;
+  &__list a {
     display: block;
+    text-decoration: none;
+    color: #704639;
+    border-top: 1px solid #704639;
   }
 
-  &__btn {
-    display: flex;
-  }
-
-  &__prevBtn {
-    position: absolute;
-    top: 195px;
-    left: 50px;
-    color: #fff;
-    font-size: 50px;
-  }
-
-  &__nextBtn {
-    position: absolute;
-    top: 195px;
-    right: 50px;
-    color: #fff;
-    font-size: 50px;
-  }
-}
-
-.p-slidePost {
-  &__image {
-    width: 40vw;
-    height: 400px;
-    object-fit: cover;
-    vertical-align: bottom;
+  &__list a:nth-child(3) {
+    border-bottom: 1px solid #704639;
   }
 }
 
@@ -290,46 +415,111 @@ header {
 
   &__about {
     width: 50vw;
+    padding: 80px 0 0 80px;
     background-color: #ddd6cb;
+    font-weight: 700;
+  }
+
+  &__logo {
+    width: 170px;
+  }
+
+  &__info {
+    position: relative;
+    width: 36%;
+    height: 16px;
+    font-size: 12px;
+    display: inline-block;
+    padding: 8px 16px;
+    margin-top: 40px;
+    border: 1px solid #704639;
+    text-align: center;
+  }
+
+  &__info a {
+    width:100%;
+    height: 33px;
+    line-height: 33px;
+    text-decoration: none;
+    color: #704639;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   &__detail {
     color: #704639;
+    margin-top: 20px;
   }
+
 }
 
 .l-footer {
   background-color: #a58b77;
   color: #fff;
-  padding: 60px;
+  padding: 100px 80px 42px;
 
-  &__top {
+  &__inner {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 80px;
   }
 
   &__leftBox {
     display: flex;
-    margin-right: 60px;
+    // margin-right: 60px;
   }
 
-  &__leftBox ul li {
+  &__block {
+    margin-right: 7.5vw;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    word-break: keep-all;
+  }
+
+  &__rightBox span {
+    line-height: 40px;
+  }
+
+  &__linkList {
     list-style: none;
+    padding-inline-start: 0;
   }
 
-  &__leftBox ul li a{
+  &__linkList li {
+    font-size: 12px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  &__linkList li a{
     color: #fff;
     text-decoration: none;
     font-size: 16px;
+    word-break: keep-all;
   }
 
-  &__rightBox {
+
+  &__formBox {
+    width: 100%;
+    height: 40px;
+    padding: 8px 20px;
+    border: none;
+    line-height: normal;
+    margin-top: 16px;
   }
+
+  input:focus {
+    outline: none;
+}
 
   &__iconBox {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 60px;
   }
 
   &__logo {
@@ -339,7 +529,7 @@ header {
   &__iconList {
     list-style: none;
     display: flex;
-    gap: 2vw;
+    gap: 3.2vw;
   }
 
   &__iconList img {
@@ -352,13 +542,10 @@ header {
     align-items: center;
   }
 
-  &__bottomBox {
-    width: 70vw;
-  }
-
   &__bottomList {
     display: flex;
-    gap: 3vw;
+    gap: 4vw;
+    justify-content: end;
   }
 
   &__bottomList li {
@@ -368,10 +555,7 @@ header {
   &__bottomList li a {
     color: #fff;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
-.icon-tabler {
-
-}

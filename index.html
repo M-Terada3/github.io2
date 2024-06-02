@@ -79,35 +79,57 @@
               <div class="p-goods__detail">
                 木の味を活かした高級感のある作り。<br>細部までこだわった、スタイルを選ばない<br>.Treeのダイニングテーブルです。
               </div>
-              <div class="p-goods__price">¥79,000（税込）〜</div>
+              <div class="p-goods__price">¥149,000（税込）〜</div>
               <div class="p-goods__more">
                 <a href=""><span>詳細を見る</span></a>
               </div>
             </div>
           </div>
           <div class="p-more">
-            <ul class="p-more__list">
-              <li><a href=""><img src="./assets/img/goods2.jpg" alt="goods"></a></li>
-              <li><a href=""><img src="./assets/img/goods3.jpg" alt="goods"></a></li>
-              <li><a href=""><img src="./assets/img/goods4.jpg" alt="goods"></a></li>
-            </ul>
-            <div class="p-more__btn">
-              <div class="p-more__prevBtn">〈</div>
-              <div class="p-more__nextBtn">〉</div>
+            <div class="slide-wrapper">
+              <div id="slide" class="slide">
+                <img src="./assets/img/goods2.jpg" alt="goods">
+                <img src="./assets/img/goods3.jpg" alt="goods">
+                <img src="./assets/img/goods4.jpg" alt="goods">
+              </div>
+              <span id="prev" class="prev"></span>
+              <span id="next" class="next"></span>
+
             </div>
-          </div>
-          <div class="p-slidePost">
-            <a href=""><img class="p-slidePost__image" src="./assets/img/furniture01.jpg" alt="Post"></a>
-            <a href=""><img class="p-slidePost__image" src="./assets/img/furniture02.jpg" alt="Post"></a>
-            <a href=""><img class="p-slidePost__image" src="./assets/img/furniture03.jpg" alt="Post"></a>
-            <a href=""><img class="p-slidePost__image" src="./assets/img/furniture04.jpg" alt="Post"></a>
-          </div>
-          <div class="p-slidePost__more">
-            <a href=""><span>View more on Instagram</span></a>
+            <ul class="indicator" id="indicator">
+              <li class="list"></li>
+              <li class="list"></li>
+              <li class="list"></li>
+            </ul>
           </div>
         </div>
 
+        <div class="p-slidePost">
+          <ul class="p-slidePost__list">
+            <li><img class="p-slidePost__image" src="./assets/img/furniture01.jpg" alt="Post"></li>
+            <li><img class="p-slidePost__image" src="./assets/img/furniture02.jpg" alt="Post"></li>
+            <li><img class="p-slidePost__image" src="./assets/img/furniture03.jpg" alt="Post"></li>
+            <li><img class="p-slidePost__image" src="./assets/img/furniture04.jpg" alt="Post"></li>
+          </ul>
+          <ul class="p-slidePost__list">
+            <li><img class="p-slidePost__image" src="./assets/img/furniture01.jpg" alt="Post"></li>
+            <li><img class="p-slidePost__image" src="./assets/img/furniture02.jpg" alt="Post"></li>
+            <li><img class="p-slidePost__image" src="./assets/img/furniture03.jpg" alt="Post"></li>
+            <li><img class="p-slidePost__image" src="./assets/img/furniture04.jpg" alt="Post"></li>
+          </ul>
+          <ul class="p-slidePost__list">
+            <li><img class="p-slidePost__image" src="./assets/img/furniture01.jpg" alt="Post"></li>
+            <li><img class="p-slidePost__image" src="./assets/img/furniture02.jpg" alt="Post"></li>
+            <li><img class="p-slidePost__image" src="./assets/img/furniture03.jpg" alt="Post"></li>
+            <li><img class="p-slidePost__image" src="./assets/img/furniture04.jpg" alt="Post"></li>
+          </ul>
+        </div>
+        <div class="p-slidePost__more">
+          <a href=""><span>View more on Instagram</span></a>
+        </div>
+
         <div class="p-information">
+          <h3 class="p-information__title">Information</h3>
           <ul class="p-information__list">
             <a href=""><li>2024.12.22　年末年始期間中の営業・配送に関するお知らせ</li></a>
             <a href=""><li>2024.11.16　ポップアップストア開催のお知らせ</li></a>
@@ -123,37 +145,46 @@
               .Treeこだわりの家具をご覧いただけるスペースです。<br>
               南青山　11:00 - 19:00（定休日：火曜）
             </div>
-            <div class="p-store__imfo">
+            <div class="p-store__info">
               <a href=""><span>店舗情報を詳しく見る</span></a>
             </div>
           </div>
         </div>
       </main>
       <footer class="l-footer">
-        <div class="l-footer__top">
+        <div class="l-footer__inner">
           <div class="l-footer__leftBox">
-            <ul>製品情報と購入
-              <li><a href="">チェア</a></li>
-              <li><a href="">テーブル</a></li>
-              <li><a href="">キャビネット</a></li>
-              <li><a href="">デスク</a></li>
-              <li><a href="">アンティーク雑貨</a></li>
-              <li><a href="">インテリア</a></li>
-              <li><a href="">全ての製品</a></li>
-            </ul>
-            <ul>.Treeについて
-              <li><a href="">品質について</a></li>
-              <li><a href="">カタログ請求</a></li>
-              <li><a href="">店舗</a></li>
-              <li><a href="">採用情報</a></li>
-            </ul>
-            <ul>ヘルプ
-              <li><a href="">よくある質問</a></li>
-              <li><a href="">お問い合わせ</a></li>
-            </ul>
+            <div class="l-footer__block">
+              <h4 class="l-footer__title">製品情報と購入</h4>
+              <ul class="l-footer__linkList">
+                <li><a href="">チェア</a></li>
+                <li><a href="">テーブル</a></li>
+                <li><a href="">キャビネット</a></li>
+                <li><a href="">デスク</a></li>
+                <li><a href="">アンティーク雑貨</a></li>
+                <li><a href="">インテリア</a></li>
+                <li><a href="">全ての製品</a></li>
+              </ul>
+            </div>
+            <div class="l-footer__block">
+              <h4 class="l-footer__title">.Treeについて</h4>
+              <ul class="l-footer__linkList">
+                <li><a href="">品質について</a></li>
+                <li><a href="">カタログ請求</a></li>
+                <li><a href="">店舗</a></li>
+                <li><a href="">採用情報</a></li>
+              </ul>
+            </div>
+            <div class="l-footer__block">
+              <h4 class="l-footer__title">ヘルプ</h4>
+              <ul class="l-footer__linkList">
+                <li><a href="">よくある質問</a></li>
+                <li><a href="">お問い合わせ</a></li>
+              </ul>
+            </div>
           </div>
           <div class="l-footer__rightBox">
-            <h2>Newsletter</h2>
+            <h2 class="l-footer__title">Newsletter</h2>
             <span>.Treeの最新情報をお伝えするニュースレターをお送りします。<br>ぜひメールアドレスをご登録ください。</span>
             <form class="l-footer__form" action="https://m-terada3.github.io/github.io2.github.io/" method="get">
               <input class="l-footer__formBox" type="search" name="search" placeholder="メールアドレス"/>
@@ -183,5 +214,6 @@
         </div>
       </footer>
     </div>
+    <script src="./assets/jQuery.js"></script>
   </body>
 </html>
