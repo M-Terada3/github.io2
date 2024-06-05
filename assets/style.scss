@@ -53,7 +53,7 @@ body {
   }
 
   &__nav li::before {
-    background: #fff;
+    background: #e9e0db;
     content: '';
     width: 100%;
     height: 0.5px;
@@ -85,13 +85,13 @@ body {
 
   &__menuLists {
     display: none;
-    background-color: #fff;
+    background-color: #e9e0db;
     font-family: serif;
-    width: 100%;
+    width: 80%;
     height: 100vh;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     padding-top: 50px;
     text-align: center;
     z-index: 3;
@@ -109,11 +109,11 @@ body {
   }
 
   &__menuLists li a {
-    color: #000;
+    color: #704639;
     text-decoration: none;
   }
 }
-//ham
+
 @include sp {
   .btn {
     width: 36px;
@@ -142,7 +142,7 @@ body {
     position: absolute;
     right: 0;
     transform: translateX(-50%);
-    background-color: #000;
+    background-color: #704639;
   }
 
   .bar-top {
@@ -173,72 +173,6 @@ body {
     transition: transform 0.3s;
   }
 }
-
-//ham
-
-// .l-spHeader {
-//   @include pc {
-//     display: none;
-//   }
-
-//   &__btn {
-//     width: 36px;
-//     height: 36px;
-//     position: absolute;
-//     top: 36px;
-//     right: 12px;
-//     z-index: 5;
-//   }
-
-//   &__fixBtn {
-//     width: 100%;
-//     width: 36px;
-//     height: 36px;
-//     position: fixed;
-//     top: 60px;
-//     right: 12px;
-//     z-index: 5;
-//     display: none;
-//   }
-
-//   &__bar {
-//     width: 26px;
-//     height: 2px;
-//     display: block;
-//     position: absolute;
-//     right: 0;
-//     transform: translateX(-50%);
-//     background-color: #000;
-//   }
-
-//   &__bar-top {
-//     top: 10px;
-//   }
-
-//   &__bar-bottom {
-//     bottom: 10px;
-//   }
-
-//   &__btn.close &__bar-top {
-//     transform: translate(-50%, 6px) rotate(45deg);
-//     transition: transform 0.3s;
-//   }
-
-//   &__btn.close &__bar-bottom {
-//     transform: translate(-50%, -8px) rotate(-45deg);
-//     transition: transform 0.3s;
-//   }
-
-//   &__fixBtn.close &__bar-top {
-//     transform: translate(-50%, 6px) rotate(45deg);
-//     transition: transform 0.3s;
-//   }
-
-//   &__fixBtn.close &__bar-bottom {
-//     transform: translate(-50%, -8px) rotate(-45deg);
-//     transition: transform 0.3s;
-//   }
-// }
 
 .p-keyVisual {
   height: 100vh;
@@ -285,7 +219,6 @@ body {
       font-size: 16px;
       line-height: 34px;
       letter-spacing: .0541em;
-      word-wrap: break-word;
       margin: 70px 18px 0;
     }
   }
@@ -293,7 +226,6 @@ body {
   &__text1 {
     display: block;
     margin-bottom: 48px;
-    word-break: break-word;
     width: fit-content;
   }
 
@@ -301,13 +233,23 @@ body {
     display: block;
     margin-bottom: 50px;
     margin-left: 39px;
-    word-break: break-word;
   }
 
   &__text3 {
     display: block;
-    word-break: break-word;
     letter-spacing: .07405em;
+  }
+}
+
+.pc-br {
+  @include sp {
+    display: none;
+  }
+}
+
+.sp-br {
+  @include pc {
+    display: none;
   }
 }
 
@@ -342,7 +284,7 @@ body {
 
     @include sp {
       width: 80vw;
-      padding: 60px 0 60px 50px;
+      padding: 60px 0 60px 24px
     }
   }
 
@@ -368,7 +310,8 @@ body {
     margin-top: 80px;
     border: 1px solid #704639;
     text-align: center;
-    padding: 8px 0;
+    padding: 8px 24px;
+    font-size: 12px;
   }
 
   &__more a {
@@ -392,6 +335,11 @@ body {
   height: 600px;
   position: relative;
   overflow: hidden;
+
+  @include sp {
+    width: 100vw;
+    height: 300px;
+  }
 }
 
 .next {
@@ -406,6 +354,12 @@ body {
   border-right: solid 1.5px #fff;
   -webkit-transform: rotate(45deg) translateY(50%);
   transform: rotate(45deg) translateY(50%);
+
+  @include sp {
+    width: 25px;
+    height: 25px;
+    right: 15px;
+  }
 }
 .prev {
   position: absolute;
@@ -419,15 +373,25 @@ body {
   border-right: solid 1.5px #fff;
   -webkit-transform: rotate(-135deg) translateY(-50%);
   transform: rotate(-135deg) translateY(-50%);
+
+  @include sp {
+    width: 25px;
+    height: 25px;
+    left: 30px;
+  }
 }
 
 .indicator {
   width: 100%;
-  height: 250px;
+  height: 200px;
   display: flex;
   column-gap: 18px;
   justify-content: center;
   padding-inline-start: 0;
+
+  @include sp {
+    height: 80px;
+  }
 }
 .indicator li {
   width: 8px;
@@ -449,8 +413,12 @@ body {
 }
 .slide img {
   width: 100%;
-  height: 100%;
+  // height: 100%;
   object-fit: cover;
+
+  @include sp {
+    width: 100vw;
+  }
 }
 .slide1 {
   transform: translateX(0);
@@ -463,10 +431,13 @@ body {
 }
 
 .p-slidePost {
+  height: 360px;
   display: flex;
-  align-items: center;
-  height: 340px;
   overflow: hidden;
+
+  @include sp {
+    height: 300px;
+  }
 
   &__list {
     display: flex;
@@ -503,6 +474,11 @@ body {
     height: 80%;
     object-fit: cover;
     vertical-align: bottom;
+
+    @include sp {
+      width: 80vw;
+      height: 100%;
+    }
   }
 
   &__more {
@@ -512,7 +488,12 @@ body {
     border: 1px solid #704639;
     text-align: center;
     padding: 8px 10px;
-    margin: 90px auto 200px
+    margin: 90px auto 200px;
+
+    @include sp {
+      width: 70%;
+      margin: 20px auto 85px;
+    }
   }
 
   &__more a {
@@ -527,7 +508,7 @@ body {
     line-height: 40px;
 
     @include sp {
-      font-size: 12px;
+      font-size: 14px;
     }
   }
 }
@@ -535,6 +516,10 @@ body {
 .p-information {
   margin: 0 60px 200px;
   color: #704639;
+
+  @include sp {
+    margin: 0 30px 150px;
+  }
 
   &__title {
     margin-bottom: 30px;
@@ -549,6 +534,11 @@ body {
     padding: 20px 0;
     font-size: 16px;
     letter-spacing: 0.07777em;
+
+    @include sp {
+      padding: 24px 0;
+      font-size: 14px;
+    }
   }
 
   &__list a {
@@ -584,9 +574,8 @@ body {
     font-weight: 700;
 
     @include sp {
-      width: 70vw;
-      padding: 40px 0;
-      margin: 0 auto;
+      width: 80vw;
+      padding: 50px 0 50px 24px;
     }
   }
 
@@ -607,13 +596,14 @@ body {
 
     @include sp {
       width: 100%;
-      margin-top: 20px;
+      margin: 20px
     }
   }
 
   &__info a {
     width:100%;
     height: 33px;
+    font-size: 13px;
     line-height: 33px;
     text-decoration: none;
     color: #704639;
@@ -625,6 +615,12 @@ body {
   &__detail {
     color: #704639;
     margin-top: 20px;
+
+    @include sp {
+      font-size: 15px;
+      margin: 20px;
+      letter-spacing: 0.0541em;
+    }
   }
 
 }
@@ -633,6 +629,10 @@ body {
   background-color: #a58b77;
   color: #fff;
   padding: 100px 80px 42px;
+
+  @include sp {
+    padding: 40px 24px 12px;
+  }
 
   &__inner {
 
@@ -643,29 +643,51 @@ body {
     }
   }
 
-  &__leftBox {
+  &__searchBox {
     @include pc {
       display: flex;
-      // margin-right: 60px;
     }
   }
 
   &__block {
     margin-right: 7.5vw;
+
+    @include sp {
+      border-bottom: 1px solid #fff;
+    }
   }
 
   &__title {
-    margin-bottom: 25px;
+    font-size: 14px;
     word-break: keep-all;
   }
 
-  &__rightBox span {
+  &__newsletter {
+    font-size: 16px;
+
+    @include sp {
+      margin-top: 54px;
+    }
+  }
+
+  &__letterBox span {
+
+    @include pc {
     line-height: 40px;
+    }
+
+    @include sp {
+      font-size: 12px;
+    }
   }
 
   &__linkList {
     list-style: none;
     padding-inline-start: 0;
+
+    @include sp {
+      display: none;
+    }
   }
 
   &__linkList li {
@@ -689,21 +711,92 @@ body {
     border: none;
     line-height: normal;
     margin-top: 16px;
+
+    @include sp {
+      font-size: 10px;
+    }
   }
 
   input:focus {
     outline: none;
-}
+  }
+
+  &__letterCheckbox {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 22px;
+    position: relative;
+    font-size: 12px;
+    line-height: 2;
+    margin-top: 10px;
+    transition: opacity .4s ease-in-out;
+  }
+
+  &__letterCheckbox a {
+    color: #fff;
+  }
+
+  &__letterCheckbox::before {
+    background: #fff;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 16px;
+    left: 0;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+  }
+
+  &__btn {
+    font-size: 14px;
+    font-weight: 500;
+    color: #d2b9a6;
+    border-color: #87695f;
+    background-color: #87695f;
+    padding: 14px 36px;
+    border: 1px solid transparent;
+    display: block;
+    margin-top: 16px;
+  }
+
+  &__bottomList--sp {
+    padding-inline-start: 0;
+    margin: 60px 0;
+
+    @include pc {
+      display: none;
+    }
+  }
+
+  &__bottomList--sp li {
+    list-style: none;
+  }
+
+  &__bottomList--sp li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+  }
 
   &__iconBox {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 60px;
+
+    @include sp {
+      margin-bottom: 30px;
+    }
   }
 
   &__logo {
     width: 170px;
+
+    @include sp {
+      width: 130px;
+    }
   }
 
   &__iconList {
@@ -714,25 +807,33 @@ body {
 
   &__iconList img {
     width: 30px;
+
+    @include sp {
+      width: 26px;
+    }
   }
 
-  &__bottom {
+  &__bottom--pc {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  &__bottomList {
+  &__bottomList--pc {
     display: flex;
     gap: 4vw;
     justify-content: end;
+
+    @include sp {
+      display: none;
+    }
   }
 
-  &__bottomList li {
+  &__bottomList--pc li {
     list-style: none;
   }
 
-  &__bottomList li a {
+  &__bottomList--pc li a {
     color: #fff;
     text-decoration: none;
     font-size: 13px;
