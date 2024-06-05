@@ -17,9 +17,6 @@ body {
   font-family: serif;
 }
 
-header {
-}
-
 .l-pcHeader {
   width: 100%;
   position: absolute;
@@ -51,6 +48,26 @@ header {
     list-style: none;
     font-size: 16px;
     letter-spacing: .07777em;
+    padding-bottom: 5px;
+    position: relative;
+  }
+
+  &__nav li::before {
+    background: #fff;
+    content: '';
+    width: 100%;
+    height: 0.5px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    transform-origin: left top;
+    transform: scale(0, 1);
+    transition: transform .3s;
+  }
+  &__nav li:hover::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
   }
 
   &__nav a {
@@ -63,12 +80,42 @@ header {
     margin: 12px 30px 0;
   }
 }
+
 .l-spHeader {
-  @include pc {
+
+  &__menuLists {
     display: none;
+    background-color: #fff;
+    font-family: serif;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+    text-align: center;
+    z-index: 3;
   }
 
-  &__btn {
+  &__menuLists ul {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__menuLists li {
+    list-style: none;
+    padding: 10px;
+  }
+
+  &__menuLists li a {
+    color: #000;
+    text-decoration: none;
+  }
+}
+//ham
+@include sp {
+  .btn {
     width: 36px;
     height: 36px;
     position: absolute;
@@ -77,7 +124,7 @@ header {
     z-index: 5;
   }
 
-  &__fixBtn {
+  .fixBtn {
     width: 100%;
     width: 36px;
     height: 36px;
@@ -88,7 +135,7 @@ header {
     display: none;
   }
 
-  &__bar {
+  .bar {
     width: 26px;
     height: 2px;
     display: block;
@@ -98,34 +145,100 @@ header {
     background-color: #000;
   }
 
-  &__bar-top {
+  .bar-top {
     top: 10px;
   }
 
-  &__bar-bottom {
+  .bar-bottom {
     bottom: 10px;
   }
 
-  &__btn.close &__bar-top {
+  .btn.close .bar-top {
     transform: translate(-50%, 6px) rotate(45deg);
     transition: transform 0.3s;
   }
 
-  &__btn.close &__bar-bottom {
+  .btn.close .bar-bottom {
     transform: translate(-50%, -8px) rotate(-45deg);
     transition: transform 0.3s;
   }
 
-  &__fixBtn.close &__bar-top {
+  .fixBtn.close .bar-top {
     transform: translate(-50%, 6px) rotate(45deg);
     transition: transform 0.3s;
   }
 
-  &__fixBtn.close &__bar-bottom {
+  .fixBtn.close .bar-bottom {
     transform: translate(-50%, -8px) rotate(-45deg);
     transition: transform 0.3s;
   }
 }
+
+//ham
+
+// .l-spHeader {
+//   @include pc {
+//     display: none;
+//   }
+
+//   &__btn {
+//     width: 36px;
+//     height: 36px;
+//     position: absolute;
+//     top: 36px;
+//     right: 12px;
+//     z-index: 5;
+//   }
+
+//   &__fixBtn {
+//     width: 100%;
+//     width: 36px;
+//     height: 36px;
+//     position: fixed;
+//     top: 60px;
+//     right: 12px;
+//     z-index: 5;
+//     display: none;
+//   }
+
+//   &__bar {
+//     width: 26px;
+//     height: 2px;
+//     display: block;
+//     position: absolute;
+//     right: 0;
+//     transform: translateX(-50%);
+//     background-color: #000;
+//   }
+
+//   &__bar-top {
+//     top: 10px;
+//   }
+
+//   &__bar-bottom {
+//     bottom: 10px;
+//   }
+
+//   &__btn.close &__bar-top {
+//     transform: translate(-50%, 6px) rotate(45deg);
+//     transition: transform 0.3s;
+//   }
+
+//   &__btn.close &__bar-bottom {
+//     transform: translate(-50%, -8px) rotate(-45deg);
+//     transition: transform 0.3s;
+//   }
+
+//   &__fixBtn.close &__bar-top {
+//     transform: translate(-50%, 6px) rotate(45deg);
+//     transition: transform 0.3s;
+//   }
+
+//   &__fixBtn.close &__bar-bottom {
+//     transform: translate(-50%, -8px) rotate(-45deg);
+//     transition: transform 0.3s;
+//   }
+// }
 
 .p-keyVisual {
   height: 100vh;
@@ -145,11 +258,19 @@ header {
   overflow: hidden;
   position: relative;
 
+  @include sp {
+    flex-direction: column;
+    height: auto;
+    min-height: 107.844vh;
+    margin: 100px 0;
+  }
+
   &__titleBox {
     font-size: 36px;
     writing-mode: vertical-rl;
     letter-spacing: .07777em;
     font-weight: inherit;
+    padding-right: 12%;
   }
 
   &__textBox {
@@ -159,6 +280,14 @@ header {
     margin-top: 57px;
     margin-left: 170px;
     transition: opacity 1s ease .5s;
+
+    @include sp {
+      font-size: 16px;
+      line-height: 34px;
+      letter-spacing: .0541em;
+      word-wrap: break-word;
+      margin: 70px 18px 0;
+    }
   }
 
   &__text1 {
@@ -183,10 +312,15 @@ header {
 }
 
 .p-goods {
-  margin: 0 60px;
+  @include pc {
+    margin: 0 60px;
+  }
 
   &__pickUp {
-    display: flex;
+    background-color: #ddd6cb;
+    @include pc {
+      display: flex;
+    }
   }
 
   &__image {
@@ -194,13 +328,22 @@ header {
     height: 45vw;
     vertical-align: bottom;
     object-fit: cover;
+
+    @include sp {
+      width: 100%;
+      height: 100vw;
+    }
   }
 
   &__text {
     width: 45vw;
     color: #704639;
     padding: 80px 0  0 70px;
-    background-color: #ddd6cb;
+
+    @include sp {
+      width: 80vw;
+      padding: 60px 0 60px 50px;
+    }
   }
 
   &__title {
@@ -305,7 +448,7 @@ header {
   transition: all 0.5s;
 }
 .slide img {
-  width: 100vw;
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -340,9 +483,16 @@ header {
     }
   }
 
-  // &__paused:hover .slideshow {
-  //   animation-play-state: paused;
-  // }
+  &__paused:hover &__list {
+    // animation: loop-slide 80s infinite ease 1s both;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.8;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
 
   &__list li {
     list-style: none;
@@ -350,7 +500,7 @@ header {
 
   &__image {
     width: 40vw;
-    height: 400px;
+    height: 80%;
     object-fit: cover;
     vertical-align: bottom;
   }
@@ -375,6 +525,10 @@ header {
     width:100%;
     height: 40px;
     line-height: 40px;
+
+    @include sp {
+      font-size: 12px;
+    }
   }
 }
 
@@ -410,18 +564,30 @@ header {
 }
 
 .p-store {
-  display: flex;
+  background-color: #ddd6cb;
+  @include pc {
+    display: flex;
+  }
 
   &__image {
     width: 50vw;
     vertical-align: bottom;
+
+    @include sp {
+      width: 100%;
+    }
   }
 
   &__about {
     width: 50vw;
     padding: 80px 0 0 80px;
-    background-color: #ddd6cb;
     font-weight: 700;
+
+    @include sp {
+      width: 70vw;
+      padding: 40px 0;
+      margin: 0 auto;
+    }
   }
 
   &__logo {
@@ -438,6 +604,11 @@ header {
     margin-top: 40px;
     border: 1px solid #704639;
     text-align: center;
+
+    @include sp {
+      width: 100%;
+      margin-top: 20px;
+    }
   }
 
   &__info a {
@@ -464,14 +635,19 @@ header {
   padding: 100px 80px 42px;
 
   &__inner {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 80px;
+
+    @include pc {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 80px;
+    }
   }
 
   &__leftBox {
-    display: flex;
-    // margin-right: 60px;
+    @include pc {
+      display: flex;
+      // margin-right: 60px;
+    }
   }
 
   &__block {

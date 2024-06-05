@@ -1,3 +1,27 @@
+// $(function () {
+//   $(".btn").on("click", function () {
+//     $(".btn").toggleClass("close");
+//     $("nav").fadeToggle(500);
+//   });
+// });
+
+// $(function () {
+//   $(".fixBtn").on("click", function () {
+//     $(".fixBtn").toggleClass("close");
+//     $("nav").fadeToggle(500);
+//   });
+
+//   $(window).scroll(function () {
+//     if ($(this).scrollTop() > 150 ) {
+//       $(".fixBtn").fadeIn();
+//     } else {
+//       $(".fixBtn").fadeOut(1);
+//     }
+//   });
+// });
+
+
+
 const slide = document.getElementById('slide');
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
