@@ -26,9 +26,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  // transition: all 0.3s ease-in-out;
   animation: slideinTop 1s;
-  // visibility: hidden;
+  transition: 1s;
   z-index: 2;
 
   @keyframes slideinTop {
@@ -97,6 +96,8 @@ body {
     margin: 12px 30px 0;
   }
 }
+
+
 
 .l-spHeader {
 
@@ -251,6 +252,8 @@ body {
 
 .p-logo {
   position: fixed;
+  top: 50%;
+  left: 50%;
   inset: 0;
   margin: auto;
   animation-name: fadein;
@@ -639,8 +642,12 @@ body {
   }
 }
 
+
 .p-store {
   background-color: #ddd6cb;
+  // transform:translateY(50%);
+  // opacity:0;
+
   @include pc {
     display: flex;
   }
@@ -711,8 +718,8 @@ body {
       letter-spacing: 0.0541em;
     }
   }
-
 }
+
 
 .l-footer {
   background-color: #a58b77;
@@ -934,4 +941,3 @@ body {
     font-size: 13px;
   }
 }
-

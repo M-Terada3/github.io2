@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href=".\assets\style.css" />
+    <script src="./assets/jQuery.js"></script>
     <title>responsive-site</title>
   </head>
   <body>
@@ -29,37 +30,36 @@
             </div>
           </div>
         </div>
-        <div class="l-spHeader">
-          <div id="hamNav" class="l-spHeader__hamburgerNav">
-            <div class="btn">
-              <span class="bar bar-top"></span>
-              <span class="bar bar-bottom"></span>
-            </div>
-            <div class="fixBtn">
-              <span class="bar bar-top"></span>
-              <span class="bar bar-bottom"></span>
-            </div>
-            <nav class="l-spHeader__menuLists">
-              <ul>
-                <li><a href="">Product</a></li>
-                <li><a href="">News</a></li>
-                <li><a href="">Shop</a></li>
-                <li><a href="">Support</a></li>
-                <li><a href="">Sustainability</a></li>
-                <li><a href="">Company</a></li>
-                <li><a href="">Contact</a></li>
-              </ul>
-            </nav>
+
+        <div id="hamNav" class="l-spHeader__hamburgerNav">
+          <div class="btn">
+            <span class="bar bar-top"></span>
+            <span class="bar bar-bottom"></span>
           </div>
+          <div class="fixBtn">
+            <span class="bar bar-top"></span>
+            <span class="bar bar-bottom"></span>
+          </div>
+          <nav class="l-spHeader__menuLists">
+            <ul>
+              <li><a href="">Product</a></li>
+              <li><a href="">News</a></li>
+              <li><a href="">Shop</a></li>
+              <li><a href="">Support</a></li>
+              <li><a href="">Sustainability</a></li>
+              <li><a href="">Company</a></li>
+              <li><a href="">Contact</a></li>
+            </ul>
+          </nav>
         </div>
       </header>
       <main>
         <div class="p-keyVisual">
           <ul class="p-keyVisual__top">
             <li><img class="p-keyVisual__topImage" src="./assets/img/top_img.jpg" alt="keyVisual"></li>
-            <li><img class="p-keyVisual__topImage" src="./assets/img/furniture02.jpg" alt="keyVisual"></li>
+            <li><img class="p-keyVisual__topImage" src="./assets/img/wood_desk.jpg" alt="keyVisual"></li>
             <li><img class="p-keyVisual__topImage" src="./assets/img/top_img.jpg" alt="keyVisual"></li>
-            <li><img class="p-keyVisual__topImage" src="./assets/img/furniture02.jpg" alt="keyVisual"></li>
+            <li><img class="p-keyVisual__topImage" src="./assets/img/wood_desk.jpg" alt="keyVisual"></li>
           </ul>
           <ul class="p-keyVisual__bottom">
             <li><img class="p-keyVisual__bottomImage" src="./assets/img/goods1.jpg" alt="keyVisual"></li>
@@ -146,16 +146,18 @@
           </ul>
         </div>
 
-        <div class="p-store">
-          <a href=""><img class="p-store__image" src="./assets/img/store_img.jpg" alt="店舗"></a>
-          <div class="p-store__about">
-            <img class="p-store__logo" src="./assets/img/BrandLogo.png" alt="logo">
-            <div class="p-store__detail">
-              .Treeこだわりの家具をご覧いただける<br class="sp-br">スペースです。<br>
-              南青山　11:00 - 19:00（定休日：火曜）
-            </div>
-            <div class="p-store__info">
-              <a href=""><span>店舗情報を詳しく見る</span></a>
+        <div class="animationTarget">
+          <div class="p-store">
+            <a href=""><img class="p-store__image" src="./assets/img/store_img.jpg" alt="店舗"></a>
+            <div class="p-store__about">
+              <img class="p-store__logo" src="./assets/img/BrandLogo.png" alt="logo">
+              <div class="p-store__detail">
+                .Treeこだわりの家具をご覧いただける<br class="sp-br">スペースです。<br>
+                南青山　11:00 - 19:00（定休日：火曜）
+              </div>
+              <div class="p-store__info">
+                <a href=""><span>店舗情報を詳しく見る</span></a>
+              </div>
             </div>
           </div>
         </div>
@@ -239,6 +241,5 @@
         </div>
       </footer>
     </div>
-    <script src="./assets/jQuery.js"></script>
   </body>
 </html>
