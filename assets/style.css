@@ -6,12 +6,25 @@ body {
 
 .l-pcHeader {
   width: 100%;
-  position: absolute;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding-top: 24px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  animation: slideinTop 1s;
   z-index: 2;
+}
+@keyframes slideinTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @media screen and (max-width: 768px) {
   .l-pcHeader {
@@ -148,8 +161,14 @@ body {
   display: flex;
   height: 100vh;
   padding-inline-start: 0;
-  animation: infinity-scroll-left 80s infinite linear 0.5s both;
+  animation: infinity-scroll-left 50s infinite linear 0.5s both;
   margin: 0;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .p-keyVisual__top {
+    animation: infinity-scroll-left 30s infinite linear 0.5s both;
+  }
 }
 @keyframes infinity-scroll-left {
   from {
@@ -159,18 +178,17 @@ body {
     transform: translateX(-100%);
   }
 }
-.p-keyVisual__paused:hover .p-keyVisual__top {
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-  -moz-opacity: 0.8;
-  transition: 0.3s ease-in-out;
-}
 .p-keyVisual__bottom {
   display: flex;
   height: 100vh;
   padding-inline-start: 0;
-  animation: infinity-scroll-right 80s infinite linear 0.5s both;
+  animation: infinity-scroll-right 50s infinite linear 0.5s both;
   margin: 0;
+}
+@media screen and (max-width: 768px) {
+  .p-keyVisual__bottom {
+    animation: infinity-scroll-right 30s infinite linear 0.5s both;
+  }
 }
 @keyframes infinity-scroll-right {
   from {
@@ -179,12 +197,6 @@ body {
   to {
     transform: translateX(0);
   }
-}
-.p-keyVisual__bottom__paused:hover .p-keyVisual__bottom__bottom {
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-  -moz-opacity: 0.8;
-  transition: 0.3s ease-in-out;
 }
 .p-keyVisual li {
   list-style: none;
@@ -198,15 +210,13 @@ body {
 }
 
 .p-logo {
+  position: fixed;
+  inset: 0;
+  margin: auto;
   animation-name: fadein;
   animation-duration: 4.5s;
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
-  width: 26.2%;
-  position: fixed;
-  z-index: 2;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 @keyframes fadein {
@@ -267,7 +277,7 @@ body {
 .p-about__text2 {
   display: block;
   margin-bottom: 50px;
-  margin-left: 39px;
+  margin-left: 35px;
 }
 .p-about__text3 {
   display: block;
@@ -831,6 +841,11 @@ body {
   .l-footer__iconList img {
     width: 26px;
   }
+}
+.l-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .l-footer__bottom--pc {
   display: flex;

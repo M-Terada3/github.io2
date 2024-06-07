@@ -1,3 +1,16 @@
+$(function () {
+	$(window).scroll(function () {
+		var scroll = $(window).scrollTop();
+
+		if (scroll > 700) {
+			$('#fixNav').addClass('is-show');
+		}
+		else {
+			$('#fixNav').removeClass('is-show');
+		}
+	});
+});
+
 // $(function () {
 //   $(".btn").on("click", function () {
 //     $(".btn").toggleClass("close");
