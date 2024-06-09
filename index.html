@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href=".\assets\style.css" />
     <script src="./assets/jQuery.js"></script>
@@ -13,7 +13,7 @@
       <header>
         <div id="fixNav" class="l-pcHeader">
           <div class="l-pcHeader__logo">
-            <a href=""><img src="./assets/img/BrandLogo.png" /></a>
+            <a href=""><img src="./assets/img/BrandLogo.png" alt="Logo" /></a>
           </div>
           <div class="l-pcHeader__nav">
             <ul>
@@ -25,20 +25,29 @@
               <li><a href="">Company</a></li>
               <li><a href="">Contact</a></li>
             </ul>
-            <div class="l-pcHeader__cartIcon">
-              <a href=""><img src="./assets/img/cart_icon.png" /></a>
+            <div class="l-pcHeader__cart">
+              <a href="" class="l-pcHeader__cartIcon"
+                ><img src="./assets/img/cart_icon.png" alt="カート"
+              /></a>
+              <span class="circle"></span>
             </div>
           </div>
         </div>
-
-        <div id="hamNav" class="l-spHeader__hamburgerNav">
-          <div class="btn">
-            <span class="bar bar-top"></span>
-            <span class="bar bar-bottom"></span>
+        <div class="l-spHeader">
+          <div class="l-spHeader__cart">
+            <a href="" class="l-spHeader__cartIcon"
+              ><img src="./assets/img/cart_icon.png" alt="カート"
+            /></a>
           </div>
-          <div class="fixBtn">
-            <span class="bar bar-top"></span>
-            <span class="bar bar-bottom"></span>
+          <div id="hamNav" class="l-spHeader__hamburgerNav">
+            <div class="btn">
+              <span class="bar bar-top"></span>
+              <span class="bar bar-bottom"></span>
+            </div>
+            <div class="fixBtn">
+              <span class="bar bar-top"></span>
+              <span class="bar bar-bottom"></span>
+            </div>
           </div>
           <nav class="l-spHeader__menuLists">
             <ul>
@@ -56,37 +65,100 @@
       <main>
         <div class="p-keyVisual">
           <ul class="p-keyVisual__top">
-            <li><img class="p-keyVisual__topImage" src="./assets/img/top_img.jpg" alt="keyVisual"></li>
-            <li><img class="p-keyVisual__topImage" src="./assets/img/wood_desk.jpg" alt="keyVisual"></li>
-            <li><img class="p-keyVisual__topImage" src="./assets/img/top_img.jpg" alt="keyVisual"></li>
-            <li><img class="p-keyVisual__topImage" src="./assets/img/wood_desk.jpg" alt="keyVisual"></li>
+            <li>
+              <img
+                class="p-keyVisual__topImage"
+                src="./assets/img/top_img.jpg"
+                alt="keyVisual"
+              />
+            </li>
+            <li>
+              <img
+                class="p-keyVisual__topImage"
+                src="./assets/img/wood_desk.jpg"
+                alt="keyVisual"
+              />
+            </li>
+            <li>
+              <img
+                class="p-keyVisual__topImage"
+                src="./assets/img/top_img.jpg"
+                alt="keyVisual"
+              />
+            </li>
+            <li>
+              <img
+                class="p-keyVisual__topImage"
+                src="./assets/img/wood_desk.jpg"
+                alt="keyVisual"
+              />
+            </li>
           </ul>
           <ul class="p-keyVisual__bottom">
-            <li><img class="p-keyVisual__bottomImage" src="./assets/img/goods1.jpg" alt="keyVisual"></li>
-            <li><img class="p-keyVisual__bottomImage" src="./assets/img/wood_desk2.jpg" alt="keyVisual"></li>
-            <li><img class="p-keyVisual__bottomImage" src="./assets/img/goods1.jpg" alt="keyVisual"></li>
-            <li><img class="p-keyVisual__bottomImage" src="./assets/img/wood_desk2.jpg" alt="keyVisual"></li>
+            <li>
+              <img
+                class="p-keyVisual__bottomImage"
+                src="./assets/img/goods1.jpg"
+                alt="keyVisual"
+              />
+            </li>
+            <li>
+              <img
+                class="p-keyVisual__bottomImage"
+                src="./assets/img/wood_desk2.jpg"
+                alt="keyVisual"
+              />
+            </li>
+            <li>
+              <img
+                class="p-keyVisual__bottomImage"
+                src="./assets/img/goods1.jpg"
+                alt="keyVisual"
+              />
+            </li>
+            <li>
+              <img
+                class="p-keyVisual__bottomImage"
+                src="./assets/img/wood_desk2.jpg"
+                alt="keyVisual"
+              />
+            </li>
           </ul>
-          <img class="p-logo" src="./assets/img/BrandLogo.png" alt="logo">
+          <img class="p-logo" src="./assets/img/BrandLogo.png" alt="logo" />
         </div>
         <div class="p-about">
           <h1 class="p-about__titleBox">無垢材にこだわる</h1>
           <div class="p-about__textBox">
-            <span class="p-about__text1">弊社の製品には、<br class="sp-br">本来の木の良さを感じていただける<br>無垢材を使用しています。<br></span>
-            <span class="p-about__text2">無垢材は断熱性が高く、<br class="sp-br">触り心地が良いなど<br>生活を快適にする特性をもっています。<br>
-            木の模様を活かした<br class="sp-br">オリジナル性のある家具となっており、<br>長期間使用することで独特の雰囲気を持った<br>アンティーク家具となっていきます。<br></span>
-            <span class="p-about__text3">わたしたち.Treeは<br>個性あふれる天然木を楽しみたい<br class="sp-br">全ての人に向けて、<br>新しい価値を届けたいと思っています。</span>
+            <span class="p-about__text1"
+              >弊社の製品には、<br
+                class="sp-br" />本来の木の良さを感じていただける<br />無垢材を使用しています。<br
+            /></span>
+            <span class="p-about__text2"
+              >無垢材は断熱性が高く、<br
+                class="sp-br" />触り心地が良いなど<br />生活を快適にする特性をもっています。<br />
+              木の模様を活かした<br
+                class="sp-br" />オリジナル性のある家具となっており、<br />長期間使用することで独特の雰囲気を持った<br />アンティーク家具となっていきます。<br
+            /></span>
+            <span class="p-about__text3"
+              >わたしたち.Treeは<br />個性あふれる天然木を楽しみたい<br
+                class="sp-br"
+              />全ての人に向けて、<br />新しい価値を届けたいと思っています。</span
+            >
           </div>
         </div>
 
         <div class="p-goods">
           <div class="p-goods__pickUp">
             <a href=""
-              ><img class="p-goods__image" src="./assets/img/goods1.jpg" alt="goods"></a>
+              ><img
+                class="p-goods__image"
+                src="./assets/img/goods1.jpg"
+                alt="goods"
+            /></a>
             <div class="p-goods__text">
               <h2 class="p-goods__title">ダイニングテーブル</h2>
               <div class="p-goods__detail">
-                木の味を活かした高級感のある作り。<br>細部までこだわった、スタイルを選ばない<br>.Treeのダイニングテーブルです。
+                木の味を活かした高級感のある作り。<br />細部までこだわった、スタイルを選ばない<br />.Treeのダイニングテーブルです。
               </div>
               <div class="p-goods__price">¥149,000（税込）〜</div>
               <div class="p-goods__more">
@@ -97,13 +169,12 @@
           <div class="p-more">
             <div class="slide-wrapper">
               <div id="slide" class="slide">
-                <img src="./assets/img/goods2.jpg" alt="goods">
-                <img src="./assets/img/goods3.jpg" alt="goods">
-                <img src="./assets/img/goods4.jpg" alt="goods">
+                <img src="./assets/img/goods2.jpg" alt="goods" />
+                <img src="./assets/img/goods3.jpg" alt="goods" />
+                <img src="./assets/img/goods4.jpg" alt="goods" />
               </div>
               <span id="prev" class="prev"></span>
               <span id="next" class="next"></span>
-
             </div>
             <ul class="indicator" id="indicator">
               <li class="list"></li>
@@ -115,22 +186,94 @@
 
         <div class="p-slidePost p-slidePostpaused">
           <ul class="p-slidePost__list">
-            <li><img class="p-slidePost__image" src="./assets/img/furniture01.jpg" alt="Post"></li>
-            <li><img class="p-slidePost__image" src="./assets/img/furniture02.jpg" alt="Post"></li>
-            <li><img class="p-slidePost__image" src="./assets/img/furniture03.jpg" alt="Post"></li>
-            <li><img class="p-slidePost__image" src="./assets/img/furniture04.jpg" alt="Post"></li>
+            <li>
+              <img
+                class="p-slidePost__image"
+                src="./assets/img/furniture01.jpg"
+                alt="Post"
+              />
+            </li>
+            <li>
+              <img
+                class="p-slidePost__image"
+                src="./assets/img/furniture02.jpg"
+                alt="Post"
+              />
+            </li>
+            <li>
+              <img
+                class="p-slidePost__image"
+                src="./assets/img/furniture03.jpg"
+                alt="Post"
+              />
+            </li>
+            <li>
+              <img
+                class="p-slidePost__image"
+                src="./assets/img/furniture04.jpg"
+                alt="Post"
+              />
+            </li>
           </ul>
           <ul class="p-slidePost__list">
-            <li><img class="p-slidePost__image" src="./assets/img/furniture01.jpg" alt="Post"></li>
-            <li><img class="p-slidePost__image" src="./assets/img/furniture02.jpg" alt="Post"></li>
-            <li><img class="p-slidePost__image" src="./assets/img/furniture03.jpg" alt="Post"></li>
-            <li><img class="p-slidePost__image" src="./assets/img/furniture04.jpg" alt="Post"></li>
+            <li>
+              <img
+                class="p-slidePost__image"
+                src="./assets/img/furniture01.jpg"
+                alt="Post"
+              />
+            </li>
+            <li>
+              <img
+                class="p-slidePost__image"
+                src="./assets/img/furniture02.jpg"
+                alt="Post"
+              />
+            </li>
+            <li>
+              <img
+                class="p-slidePost__image"
+                src="./assets/img/furniture03.jpg"
+                alt="Post"
+              />
+            </li>
+            <li>
+              <img
+                class="p-slidePost__image"
+                src="./assets/img/furniture04.jpg"
+                alt="Post"
+              />
+            </li>
           </ul>
           <ul class="p-slidePost__list">
-            <li><img class="p-slidePost__image" src="./assets/img/furniture01.jpg" alt="Post"></li>
-            <li><img class="p-slidePost__image" src="./assets/img/furniture02.jpg" alt="Post"></li>
-            <li><img class="p-slidePost__image" src="./assets/img/furniture03.jpg" alt="Post"></li>
-            <li><img class="p-slidePost__image" src="./assets/img/furniture04.jpg" alt="Post"></li>
+            <li>
+              <img
+                class="p-slidePost__image"
+                src="./assets/img/furniture01.jpg"
+                alt="Post"
+              />
+            </li>
+            <li>
+              <img
+                class="p-slidePost__image"
+                src="./assets/img/furniture02.jpg"
+                alt="Post"
+              />
+            </li>
+            <li>
+              <img
+                class="p-slidePost__image"
+                src="./assets/img/furniture03.jpg"
+                alt="Post"
+              />
+            </li>
+            <li>
+              <img
+                class="p-slidePost__image"
+                src="./assets/img/furniture04.jpg"
+                alt="Post"
+              />
+            </li>
           </ul>
         </div>
         <div class="p-slidePost__more">
@@ -140,19 +283,42 @@
         <div class="p-information">
           <h3 class="p-information__title">Information</h3>
           <ul class="p-information__list">
-            <a href=""><li>2024.12.22　<br class=sp-br>年末年始期間中の営業・配送に関するお知らせ</li></a>
-            <a href=""><li>2024.11.16　<br class=sp-br>ポップアップストア開催のお知らせ</li></a>
-            <a href=""><li>2024.10.12　<br class=sp-br>2周年記念特典のご案内</li></a>
+            <a href=""
+              ><li>
+                2024.12.22　<br
+                  class="sp-br"
+                />年末年始期間中の営業・配送に関するお知らせ
+              </li></a
+            >
+            <a href=""
+              ><li>
+                2024.11.16　<br class="sp-br" />ポップアップストア開催のお知らせ
+              </li></a
+            >
+            <a href=""
+              ><li>2024.10.12　<br class="sp-br" />2周年記念特典のご案内</li></a
+            >
           </ul>
         </div>
 
         <div class="animationTarget">
           <div class="p-store">
-            <a href=""><img class="p-store__image" src="./assets/img/store_img.jpg" alt="店舗"></a>
+            <a href=""
+              ><img
+                class="p-store__image"
+                src="./assets/img/store_img.jpg"
+                alt="店舗"
+            /></a>
             <div class="p-store__about">
-              <img class="p-store__logo" src="./assets/img/BrandLogo.png" alt="logo">
+              <img
+                class="p-store__logo"
+                src="./assets/img/BrandLogo.png"
+                alt="logo"
+              />
               <div class="p-store__detail">
-                .Treeこだわりの家具をご覧いただける<br class="sp-br">スペースです。<br>
+                .Treeこだわりの家具をご覧いただける<br
+                  class="sp-br"
+                />スペースです。<br />
                 南青山　11:00 - 19:00（定休日：火曜）
               </div>
               <div class="p-store__info">
@@ -166,7 +332,10 @@
         <div class="l-footer__inner">
           <div class="l-footer__searchBox">
             <div class="l-footer__block">
-              <h4 class="l-footer__title">製品情報と購入</h4>
+              <div class="l-footer__linkBox">
+                <h4 class="l-footer__title">製品情報と購入</h4>
+                <div class="l-footer__button">▼</div>
+              </div>
               <ul class="l-footer__linkList">
                 <li><a href="">チェア</a></li>
                 <li><a href="">テーブル</a></li>
@@ -178,7 +347,10 @@
               </ul>
             </div>
             <div class="l-footer__block">
-              <h4 class="l-footer__title">.Treeについて</h4>
+              <div class="l-footer__linkBox">
+                <h4 class="l-footer__title">.Treeについて</h4>
+                <div class="l-footer__button">▼</div>
+              </div>
               <ul class="l-footer__linkList">
                 <li><a href="">品質について</a></li>
                 <li><a href="">カタログ請求</a></li>
@@ -187,7 +359,10 @@
               </ul>
             </div>
             <div class="l-footer__block">
-              <h4 class="l-footer__title">ヘルプ</h4>
+              <div class="l-footer__linkBox">
+                <h4 class="l-footer__title">ヘルプ</h4>
+                <div class="l-footer__button">▼</div>
+              </div>
               <ul class="l-footer__linkList">
                 <li><a href="">よくある質問</a></li>
                 <li><a href="">お問い合わせ</a></li>
@@ -196,9 +371,20 @@
           </div>
           <div class="l-footer__letterBox">
             <h2 class="l-footer__newsletter">Newsletter</h2>
-            <span>.Treeの最新情報をお伝えするニュースレターをお送りします。<br>ぜひメールアドレスをご登録ください。</span>
-            <form class="l-footer__form" action="https://m-terada3.github.io/github.io2.github.io/" method="get">
-              <input class="l-footer__formBox" type="search" name="search" placeholder="メールアドレス"/>
+            <span
+              >.Treeの最新情報をお伝えするニュースレターをお送りします。<br />ぜひメールアドレスをご登録ください。</span
+            >
+            <form
+              class="l-footer__form"
+              action="https://m-terada3.github.io/github.io2.github.io/"
+              method="get"
+            >
+              <input
+                class="l-footer__formBox"
+                type="search"
+                name="search"
+                placeholder="メールアドレス"
+              />
             </form>
             <div class="l-footer__policyArea">
               <label id="checkboxLabel" class="l-footer__letterCheckbox">
@@ -219,11 +405,21 @@
           </ul>
         </div>
         <div class="l-footer__iconBox">
-          <img class="l-footer__logo" src="./assets/img/BrandLogo.png" alt="logo">
+          <img
+            class="l-footer__logo"
+            src="./assets/img/BrandLogo.png"
+            alt="logo"
+          />
           <div class="l-footer__iconList">
-            <li><a href=""><img src="./assets/img/twitter_fill.png"></a></li>
-            <li><a href=""><img src="./assets/img/instagram.png"></a></li>
-            <li><a href=""><img src="./assets/img/Pintarest.png"></a></li>
+            <li>
+              <a href=""><img src="./assets/img/twitter_fill.png" /></a>
+            </li>
+            <li>
+              <a href=""><img src="./assets/img/instagram.png" /></a>
+            </li>
+            <li>
+              <a href=""><img src="./assets/img/Pintarest.png" /></a>
+            </li>
           </div>
         </div>
         <div class="l-footer__bottom">

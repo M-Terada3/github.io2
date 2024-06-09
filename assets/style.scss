@@ -26,11 +26,11 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  animation: slideinTop 1s;
+  animation: slideInTop 1s;
   transition: 1s;
   z-index: 2;
 
-  @keyframes slideinTop {
+  @keyframes slideInTop {
     0% {
       opacity: 0;
       transform: translateY(-50px);
@@ -63,14 +63,14 @@ body {
   &__nav li {
     list-style: none;
     font-size: 16px;
-    letter-spacing: .07777em;
+    letter-spacing: 0.07777em;
     padding-bottom: 5px;
     position: relative;
   }
 
   &__nav li::before {
     background: #e9e0db;
-    content: '';
+    content: "";
     width: 100%;
     height: 0.5px;
     position: absolute;
@@ -79,7 +79,7 @@ body {
     margin: auto;
     transform-origin: left top;
     transform: scale(0, 1);
-    transition: transform .3s;
+    transition: transform 0.3s;
   }
   &__nav li:hover::before {
     transform-origin: left top;
@@ -91,15 +91,65 @@ body {
     text-decoration: none;
   }
 
+  &__cart {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__cartIcon {
+    color: #acacac;
+    position: relative;
+    z-index: 10;
+    text-decoration: none;
+  }
+
   &__cartIcon img {
     width: 30px;
     margin: 12px 30px 0;
   }
 }
 
+.circle {
+  @include pc {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    right: 47%;
+    top: 42%;
+    transform: translate(50%, -50%);
+    transition: transform ease 0.4s;
+    z-index: 0;
+    transition: 0.5s;
+  }
+}
 
+.l-pcHeader__cartIcon:hover + .circle {
+  background-color: #704639;
+}
 
 .l-spHeader {
+  &__cart {
+    position: relative;
+    display: block;
+
+    @include pc {
+      display: none;
+    }
+  }
+
+  &__cartIcon {
+    text-decoration: none;
+  }
+
+  &__cartIcon img {
+    width: 30px;
+    position: absolute;
+    top: 38px;
+    right: 75px;
+    z-index: 2;
+  }
 
   &__menuLists {
     display: none;
@@ -160,7 +210,7 @@ body {
     position: absolute;
     right: 0;
     transform: translateX(-50%);
-    background-color: #704639;
+    background-color: #fff;
   }
 
   .bar-top {
@@ -199,12 +249,12 @@ body {
     display: flex;
     height: 100vh;
     padding-inline-start: 0;
-    animation :infinity-scroll-left 50s infinite linear 0.5s both;
+    animation: infinity-scroll-left 50s infinite linear 0.5s both;
     margin: 0;
     position: relative;
 
     @include sp {
-      animation :infinity-scroll-left 30s infinite linear 0.5s both;
+      animation: infinity-scroll-left 30s infinite linear 0.5s both;
     }
 
     @keyframes infinity-scroll-left {
@@ -221,11 +271,11 @@ body {
     display: flex;
     height: 100vh;
     padding-inline-start: 0;
-    animation :infinity-scroll-right 50s infinite linear 0.5s both;
+    animation: infinity-scroll-right 50s infinite linear 0.5s both;
     margin: 0;
 
     @include sp {
-      animation :infinity-scroll-right 30s infinite linear 0.5s both;
+      animation: infinity-scroll-right 30s infinite linear 0.5s both;
     }
 
     @keyframes infinity-scroll-right {
@@ -242,7 +292,8 @@ body {
     list-style: none;
   }
 
-  &__topImage ,&__bottomImage {
+  &__topImage,
+  &__bottomImage {
     width: 100vw;
     height: 100%;
     object-fit: cover;
@@ -256,23 +307,22 @@ body {
   left: 50%;
   inset: 0;
   margin: auto;
-  animation-name: fadein;
+  animation-name: fadeIn;
   animation-duration: 4.5s;
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
 }
 
-
-  @keyframes fadein {
-    0% {
-      opacity: 0;
-      transform: translateY(0);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
   }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .p-about {
   display: flex;
@@ -292,7 +342,7 @@ body {
   &__titleBox {
     font-size: 36px;
     writing-mode: vertical-rl;
-    letter-spacing: .07777em;
+    letter-spacing: 0.07777em;
     font-weight: inherit;
     padding-right: 12%;
   }
@@ -300,15 +350,15 @@ body {
   &__textBox {
     font-size: 18px;
     line-height: 44px;
-    letter-spacing: .07777em;
+    letter-spacing: 0.07777em;
     margin-top: 57px;
     margin-left: 170px;
-    transition: opacity 1s ease .5s;
+    transition: opacity 1s ease 0.5s;
 
     @include sp {
       font-size: 15px;
       line-height: 34px;
-      letter-spacing: .0541em;
+      letter-spacing: 0.0541em;
       margin: 70px 18px 0;
     }
   }
@@ -327,7 +377,7 @@ body {
 
   &__text3 {
     display: block;
-    letter-spacing: .07405em;
+    letter-spacing: 0.07405em;
   }
 }
 
@@ -370,11 +420,11 @@ body {
   &__text {
     width: 45vw;
     color: #704639;
-    padding: 80px 0  0 70px;
+    padding: 80px 0 0 70px;
 
     @include sp {
       width: 80vw;
-      padding: 60px 0 60px 24px
+      padding: 60px 0 60px 24px;
     }
   }
 
@@ -410,7 +460,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width:100%;
+    width: 100%;
     height: 44px;
     line-height: 44px;
   }
@@ -492,7 +542,7 @@ body {
   cursor: pointer;
 }
 .indicator li:first-of-type {
-  background-color: #704639;;
+  background-color: #704639;
 }
 
 .slide {
@@ -592,7 +642,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width:100%;
+    width: 100%;
     height: 40px;
     line-height: 40px;
 
@@ -641,7 +691,6 @@ body {
     border-bottom: 1px solid #704639;
   }
 }
-
 
 .p-store {
   background-color: #ddd6cb;
@@ -692,12 +741,12 @@ body {
 
     @include sp {
       width: 80%;
-      margin: 20px
+      margin: 20px;
     }
   }
 
   &__info a {
-    width:100%;
+    width: 100%;
     height: 33px;
     font-size: 13px;
     line-height: 33px;
@@ -720,7 +769,6 @@ body {
   }
 }
 
-
 .l-footer {
   background-color: #a58b77;
   color: #fff;
@@ -731,7 +779,6 @@ body {
   }
 
   &__inner {
-
     @include pc {
       display: flex;
       justify-content: space-between;
@@ -746,6 +793,7 @@ body {
   }
 
   &__block {
+    width: 100%;
     margin-right: 7.5vw;
 
     @include sp {
@@ -753,9 +801,21 @@ body {
     }
   }
 
+  &__linkBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &__title {
     font-size: 16px;
     word-break: keep-all;
+  }
+
+  &__button {
+    @include pc {
+      display: none;
+    }
   }
 
   &__newsletter {
@@ -767,9 +827,8 @@ body {
   }
 
   &__letterBox span {
-
     @include pc {
-    line-height: 40px;
+      line-height: 40px;
     }
 
     @include sp {
@@ -792,13 +851,12 @@ body {
     line-height: 1.5;
   }
 
-  &__linkList li a{
+  &__linkList li a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
     word-break: keep-all;
   }
-
 
   &__formBox {
     width: 100%;
@@ -825,7 +883,7 @@ body {
     font-size: 12px;
     line-height: 2;
     margin-top: 10px;
-    transition: opacity .4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
   }
 
   &__letterCheckbox a {

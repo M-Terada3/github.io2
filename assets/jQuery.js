@@ -1,27 +1,25 @@
+// //ham//
+// $(function () {
+//   $(".btn").on("click", function () {
+//     $(".btn").toggleClass("close");
+//     $("nav").fadeToggle(500);
+//   });
+// });
 
+// $(function () {
+//   $(".fixBtn").on("click", function () {
+//     $(".fixBtn").toggleClass("close");
+//     $("nav").fadeToggle(500);
+//   });
 
-//ham//
-$(function () {
-  $(".btn").on("click", function () {
-    $(".btn").toggleClass("close");
-    $("nav").fadeToggle(500);
-  });
-});
-
-$(function () {
-  $(".fixBtn").on("click", function () {
-    $(".fixBtn").toggleClass("close");
-    $("nav").fadeToggle(500);
-  });
-
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 150 ) {
-      $(".fixBtn").fadeIn();
-    } else {
-      $(".fixBtn").fadeOut(1);
-    }
-  });
-});
+//   $(window).scroll(function () {
+//     if ($(this).scrollTop() > 150 ) {
+//       $(".fixBtn").fadeIn();
+//     } else {
+//       $(".fixBtn").fadeOut(1);
+//     }
+//   });
+// });
 
 
 //img next//
