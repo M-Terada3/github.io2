@@ -620,12 +620,6 @@ body {
   display: flex;
   overflow: hidden;
 
-  @include pc {
-    & :hover {
-      animation-play-state: paused;
-    }
-  }
-
   @include sp {
     height: 300px;
   }

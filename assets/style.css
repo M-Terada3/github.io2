@@ -575,11 +575,6 @@ body {
   display: flex;
   overflow: hidden;
 }
-@media screen and (min-width: 768px) {
-  .p-slidePost :hover {
-    animation-play-state: paused;
-  }
-}
 @media screen and (max-width: 768px) {
   .p-slidePost {
     height: 300px;
