@@ -11,10 +11,10 @@ body {
   align-items: center;
   padding-top: 24px;
   position: fixed;
-  top: 0;
+  height: 80px;
   left: 0;
   animation: slideInTop 1s;
-  transition: 1s;
+  transition: top 0.5s;
   z-index: 2;
 }
 @keyframes slideInTop {
@@ -279,9 +279,7 @@ body {
 }
 
 .p-logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: fixed;
   inset: 0;
   margin: auto;
   animation-name: fadeIn;
@@ -289,7 +287,8 @@ body {
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: opacity 1s;
+  z-index: 2;
 }
 @keyframes fadeIn {
   0% {
@@ -473,6 +472,36 @@ body {
   }
 }
 
+.slide {
+  width: 300%;
+  height: 100%;
+  display: flex;
+  transition: all 0.5s;
+}
+
+.slide img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (max-width: 768px) {
+  .slide img {
+    width: 100vw;
+  }
+}
+
+.slide1 {
+  transform: translateX(0);
+}
+
+.slide2 {
+  transform: translateX(-33.33%);
+}
+
+.slide3 {
+  transform: translateX(-66.66%);
+}
+
 .next {
   position: absolute;
   width: 50px;
@@ -541,40 +570,15 @@ body {
   background-color: #704639;
 }
 
-.slide {
-  width: 300%;
-  height: 100%;
-  display: flex;
-  transition: all 0.5s;
-}
-
-.slide img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-@media screen and (max-width: 768px) {
-  .slide img {
-    width: 100vw;
-  }
-}
-
-.slide1 {
-  transform: translateX(0);
-}
-
-.slide2 {
-  transform: translateX(-33.33%);
-}
-
-.slide3 {
-  transform: translateX(-66.66%);
-}
-
 .p-slidePost {
   height: 360px;
   display: flex;
   overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .p-slidePost :hover {
+    animation-play-state: paused;
+  }
 }
 @media screen and (max-width: 768px) {
   .p-slidePost {
@@ -784,7 +788,6 @@ body {
   }
 }
 .l-footer__block {
-  width: 100%;
   margin-right: 7.5vw;
 }
 @media screen and (max-width: 768px) {
@@ -840,57 +843,24 @@ body {
   font-size: 16px;
   word-break: keep-all;
 }
-.l-footer__formBox {
-  width: 100%;
-  height: 40px;
-  padding: 8px 20px;
-  border: none;
-  line-height: normal;
-  margin-top: 16px;
-}
-@media screen and (max-width: 768px) {
-  .l-footer__formBox {
-    font-size: 10px;
-  }
-}
 .l-footer input:focus {
   outline: none;
 }
-.l-footer #checkBtn {
-  cursor: pointer;
-  display: inline-block;
-  padding: 0 22px;
-  position: relative;
-  font-size: 12px;
-  line-height: 2;
-  margin-top: 10px;
-  transition: opacity 0.4s ease-in-out;
-}
-.l-footer__letterCheckbox a {
+.l-footer .form-control a {
   color: #fff;
-  font-size: 16px;
 }
-.l-footer__letterCheckbox::before {
-  background: #fff;
-  border-radius: 50%;
-  content: "";
-  display: block;
-  height: 16px;
-  left: 0;
-  margin-top: -8px;
-  position: absolute;
-  top: 50%;
-  width: 16px;
-}
-.l-footer__btn {
-  font-size: 14px;
-  font-weight: 500;
-  border-color: #87695f;
+.l-footer button {
+  width: 160px;
+  height: 50px;
   background-color: #87695f;
-  padding: 10px 36px;
+  border-color: transparent;
+  color: white;
   border: 1px solid transparent;
-  display: block;
-  margin-top: 16px;
+  margin-top: 20px;
+  transform: translate(0);
+  transition: all 0.3s;
+  cursor: pointer;
+  opacity: 0.4;
 }
 .l-footer__btn a {
   color: #d2b9a6;
@@ -985,23 +955,22 @@ body {
   justify-content: space-between;
 }
 
-.button {
+.button1 {
   border: none;
   border-radius: 5px;
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 15px;
   position: relative;
   background-color: transparent;
 }
 @media screen and (min-width: 768px) {
-  .button {
+  .button1 {
     display: none;
   }
 }
 
-.button::before,
-.button::after {
+.button1::before,
+.button1::after {
   content: "";
   position: absolute;
   background: #fff;
@@ -1011,19 +980,19 @@ body {
   transition: all 0.3s;
 }
 
-.button::before {
+.button1::before {
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
-.button::after {
+.button1::after {
   transform: translateX(-50%);
 }
 
-.button.open::before {
+.button1.open::before {
   transform: translate(-50%, -50%);
 }
 
-.button.open::after {
+.button1.open::after {
   opacity: 0;
 }
 

@@ -71,7 +71,7 @@
         </div>
       </header>
       <main>
-        <div class="p-keyVisual">
+        <section class="p-keyVisual">
           <ul class="p-keyVisual__top">
             <li>
               <img
@@ -125,9 +125,9 @@
             </li>
           </ul>
           <img class="p-logo" src="./assets/img/BrandLogo.png" alt="logo">
-        </div>
+        </section>
 
-        <div class="p-about">
+        <section class="p-about">
           <h1 class="p-about__titleBox">無垢材にこだわる</h1>
           <div class="p-about__textBox">
             <span class="p-about__text1">弊社の製品には、<br
@@ -136,9 +136,9 @@
               木の模様を活かした<br class="sp-br">オリジナル性のある家具となっており、<br>長期間使用することで独特の雰囲気を持った<br>アンティーク家具となっていきます。<br></span>
             <span class="p-about__text3">わたしたち.Treeは<br>個性あふれる天然木を楽しみたい<br class="sp-br">全ての人に向けて、<br>新しい価値を届けたいと思っています。</span>
           </div>
-        </div>
+        </section>
 
-        <div class="p-goods">
+        <section class="p-goods">
           <div class="p-goods__pickUp">
             <a href=""><img class="p-goods__image" src="./assets/img/goods1.jpg" alt="goods"></a>
             <div class="p-goods__text">
@@ -169,9 +169,9 @@
               <li class="list"></li>
             </ul>
           </div>
-        </div>
+        </section>
 
-        <div class="p-slidePost p-slidePostpaused">
+        <section class="p-slidePost">
           <ul class="p-slidePost__list">
             <li>
               <img class="p-slidePost__image" src="./assets/img/furniture01.jpg" alt="Post">
@@ -246,12 +246,12 @@
                 alt="Post">
             </li>
           </ul>
-        </div>
-        <div class="p-slidePost__more">
-          <a href=""><span>View more on Instagram</span></a>
-        </div>
+          <div class="p-slidePost__more">
+            <a href=""><span>View more on Instagram</span></a>
+          </div>
+        </section>
 
-        <div class="p-information">
+        <section class="p-information">
           <h3 class="p-information__title">Information</h3>
           <ul class="p-information__list">
             <a href=""
@@ -266,9 +266,9 @@
               ><li>2024.10.12　<br class="sp-br" />2周年記念特典のご案内</li></a
             >
           </ul>
-        </div>
+        </section>
 
-        <div class="p-store">
+        <section class="p-store">
           <a href=""><img class="p-store__image"
               src="./assets/img/store_img.jpg"
               alt="店舗"></a>
@@ -285,15 +285,16 @@
               <a href=""><span>店舗情報を詳しく見る</span></a>
             </div>
           </div>
-        </div>
+        </section>
       </main>
+
       <footer class="l-footer">
         <div class="l-footer__inner">
           <div class="l-footer__searchBox">
             <div class="l-footer__block accordion">
               <div class="l-footer__linkBox">
                 <h4 class="l-footer__title">製品情報と購入</h4>
-                <button type="button" class="button"></button>
+                <div class="button1"></div>
               </div>
               <ul class="l-footer__linkList content">
                 <li class="list"><a href="">チェア</a></li>
@@ -308,7 +309,7 @@
             <div class="l-footer__block accordion">
               <div class="l-footer__linkBox">
                 <h4 class="l-footer__title">.Treeについて</h4>
-                <button type="button" class="button"></button>
+                <div class="button1"></div>
               </div>
               <ul class="l-footer__linkList content">
                 <li class="list"><a href="">品質について</a></li>
@@ -321,7 +322,7 @@
             <div class="l-footer__block accordion">
               <div class="l-footer__linkBox">
                 <h4 class="l-footer__title">ヘルプ</h4>
-                <button type="button" class="button"></button>
+                <div class="button1"></div>
               </div>
               <ul class="l-footer__linkList content">
                 <li class="list"><a href="">よくある質問</a></li>
@@ -335,26 +336,16 @@
             <span
               >.Treeの最新情報をお伝えするニュースレターをお送りします。<br />ぜひメールアドレスをご登録ください。</span
             >
-            <form
-              class="l-footer__form"
-              action="https://m-terada3.github.io/github.io2.github.io/"
-              method="get"
-            >
-              <input
-                class="l-footer__formBox"
-                type="search"
-                id="form"
-                placeholder="メールアドレス"
-              />
+
+            <form class="l-footer__form" action="" method="post" id="form">
+              <div class="form-control">
+                <input type="email" name="email" value="" placeholder="メールアドレス" style="width: 90%; height: 25px;" required />
+              </div>
+              <div class="form-control">
+                <input id="checkBtn" type="checkbox" style="margin-top: 16px;" Required/><a href="">プライバシーポリシー</a>に同意する</label>
+              </div>
+              <button class="l-footer__btn" type="submit" id="button">登録する</button>
             </form>
-            <div class="l-footer__policyArea">
-              <label id="checkboxLabel" class="l-footer__letterCheckbox"><input id="checkBtn" type="checkbox">
-                <a href="">プライバシーポリシー</a>に同意する
-              </label>
-              <a href="" target="_blank" id="formBtn"><botton class="l-footer__btn" type="botton" value="">
-                登録する</button>
-              </a>
-            </div>
           </div>
         </div>
         <div class="l-footer__bottomBox--sp">

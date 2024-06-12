@@ -1,3 +1,42 @@
+//pc fixMenu//
+$(document).ready(function () {
+  let start_position = 0,
+    window_position;
+  const header = $("#fixNav");
+  var firstSectionHeight = $("section").outerHeight();
+  $(window).scroll(function () {
+    window_position = $(window).scrollTop();
+    const headerHeight = header.outerHeight();
+    if (window_position <= firstSectionHeight) {
+      header.css("top", "0");
+    } else {
+      header.css("top", -headerHeight + "px");
+    }
+    start_position = window_position;
+  });
+  $(window).trigger("scroll");
+});
+
+//p-logo
+$(document).ready(function () {
+  let start_position = 0,
+    window_position;
+  const logo = $(".p-logo");
+  var secondSectionHeight = $(".p-keyVisual__topImage").outerHeight();
+  $(window).scroll(function () {
+    window_position = $(window).scrollTop();
+    const logoHeight = logo.outerHeight();
+    if (window_position <= secondSectionHeight) {
+      logo.css("top", "0");
+    } else {
+      logo.css("top", -logoHeight + "100px");
+    }
+    start_position = window_position;
+  });
+  $(window).trigger("scroll");
+});
+
+
 //hamburger
 $(function () {
   $(".hamBtn").on("click", function () {
@@ -24,7 +63,7 @@ const totalSlides = lists.length;
 let count = 0;
 function updateListBackground() {
   for (let i = 0; i < lists.length; i++) {
-    lists[i].style.backgroundColor = i === count % totalSlides ? '#704639' : 'transparent';;
+    lists[i].style.backgroundColor = i === count % totalSlides ? '#704639' : 'transparent';
   }
 }
 function nextClick() {
@@ -53,6 +92,7 @@ indicator.addEventListener('click', (event) => {
     count = index;
     slide.classList.add(`slide${count % totalSlides + 1}`);
     updateListBackground();
+  startAutoPlay();
   }
 });
 
@@ -72,52 +112,35 @@ $(function(){
 
 //footer list
 $(function(){
-  $('.button').on('click', function(){
+  $('.button1').on('click', function(){
       $(this).parents('.accordion').find('.content').slideToggle(200);
       $(this).toggleClass('open');
   });
 });
 
 
-
-//Logo固定
-$(function(){
-  var scrollStart = $('.p-logo').offset().top; //ページ上部からの距離を取得
-  var scrollEnd = $('.p-keyVisual__bottom').offset().top; //ページ上部からの距離を取得
-  var distance = 0;
-
-  $(document).scroll(function(){
-    distance = $(this).scrollTop(); //スクロールした距離を取得
-
-    if (scrollStart <= distance) { //スクロール距離が『.sikaku_box』の位置を超えたら
-      $('.p-logo').addClass('fixed'); //class『fixed』を追加
-    } else if (scrollStart >= distance) { //スクロールがページ上部まで戻ったら
-      $('.p-logo').removeClass('fixed'); //class『fixed』を削除
-    }
-
-    if (scrollEnd <= distance) { //スクロール距離が『.end_box』の位置を超えたら
-      $('.p-logo').addClass('none'); //class『none』を追加
-    } else{
-      $('.p-logo').removeClass('none'); //『.end_box』より上部に戻ったらclass『none』を削除
-    }
-  });
-});
-
-
 //mail
-const $submitBtn = $('#formBtn'); //変数にボタン要素をセット
-$submitBtn.prop('disabled', true); //ボタンは最初はdisabledでクリックできない状態に
-var form = document.querySelector("#form"); //それぞれの入力フォームを変数化
+const form = document.getElementById("form");
+const button = document.getElementById("button");
 
-//「もし各入力欄が空だったら」という内容を関数としてセット
-function judge() {
-  if (
-    $(form).val() !== ""
-  ) {
-    $submitBtn.prop('disabled', false); //空じゃなかったらボタンを活性化し、activeクラスをつける
-    $submitBtn.addClass('active');
-  } else {
-    $submitBtn.prop('disabled', true);
-    $submitBtn.removeClass('active');
+form.addEventListener("input", update);
+form.addEventListener("change", update);
+
+function update() {
+  const isRequired = form.checkValidity();
+
+  if (isRequired) {
+    button.disabled = false;
+    button.style.opacity = 1;
+    button.style.cursor = "pointer";
+    return;
   }
 }
+
+
+//フォーム再送信
+$(function() {
+  if(window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
+  }
+});
