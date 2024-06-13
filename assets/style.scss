@@ -27,7 +27,7 @@ body {
   height: 80px;
   left: 0;
   animation: slideInTop 1s;
-  transition: top .5s;
+  transition: top 0.5s;
   z-index: 2;
 
   @keyframes slideInTop {
@@ -267,7 +267,6 @@ body {
 }
 
 .p-keyVisual {
-
   overflow: hidden;
 
   &__top {
@@ -338,18 +337,17 @@ body {
   transition: opacity 1s;
   z-index: 2;
 
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(0);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(0);
     }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
-
 
 .p-about {
   display: flex;
@@ -357,9 +355,9 @@ body {
   color: #704639;
   margin: 150px 30px 200px;
   position: relative;
-  opacity : 0;
-  transform : translate(0, 50px);
-  transition : all 1s;
+  opacity: 0;
+  transform: translate(0, 50px);
+  transition: all 1s;
 
   @include sp {
     flex-direction: column;
@@ -410,10 +408,9 @@ body {
   }
 }
 
-
-.p-about.active{
-  opacity : 1;
-  transform : translate(0, 0);
+.p-about.active {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .pc-br {
@@ -429,9 +426,9 @@ body {
 }
 
 .p-goods {
-  opacity : 0;
-  transform : translate(0, 50px);
-  transition : all 1s;
+  opacity: 0;
+  transform: translate(0, 50px);
+  transition: all 1s;
 
   @include pc {
     margin: 0 60px;
@@ -505,9 +502,9 @@ body {
   }
 }
 
-.p-goods.active{
-  opacity : 1;
-  transform : translate(0, 0);
+.p-goods.active {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .p-more {
@@ -729,9 +726,9 @@ body {
 
 .p-store {
   background-color: #ddd6cb;
-  opacity : 0;
-  transform : translate(0, 50px);
-  transition : all 1s;
+  opacity: 0;
+  transform: translate(0, 50px);
+  transition: all 1s;
 
   @include pc {
     display: flex;
@@ -804,9 +801,9 @@ body {
   }
 }
 
-.p-store.active{
-  opacity : 1;
-  transform : translate(0, 0);
+.p-store.active {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .l-footer {
@@ -896,9 +893,9 @@ body {
     outline: none;
   }
 
-.form-control a{
-  color: #fff;
-}
+  .form-control a {
+    color: #fff;
+  }
 
   button {
     width: 160px;
@@ -908,8 +905,8 @@ body {
     color: white;
     border: 1px solid transparent;
     margin-top: 20px;
-    transform : translate(0);
-    transition : all 0.3s;
+    transform: translate(0);
+    transition: all 0.3s;
     cursor: pointer;
     opacity: 0.4;
   }
@@ -1004,7 +1001,7 @@ body {
   }
 }
 
-.accordion{
+.accordion {
   display: block;
   width: 100%;
 }
@@ -1015,7 +1012,7 @@ body {
   justify-content: space-between;
 }
 
-.button1{
+.button1 {
   border: none;
   border-radius: 5px;
   display: block;
@@ -1029,8 +1026,8 @@ body {
 }
 
 .button1::before,
-.button1::after{
-  content: '';
+.button1::after {
+  content: "";
   position: absolute;
   background: #fff;
   top: 50%;
@@ -1039,24 +1036,23 @@ body {
   transition: all 0.3s;
 }
 
-.button1::before{
+.button1::before {
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
-.button1::after{
+.button1::after {
   transform: translateX(-50%);
 }
 
-.button1.open::before{
+.button1.open::before {
   transform: translate(-50%, -50%);
 }
 
-.button1.open::after{
+.button1.open::after {
   opacity: 0;
 }
 
-.content{
-
+.content {
   @include sp {
     display: none;
     padding-bottom: 24px;

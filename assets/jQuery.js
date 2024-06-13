@@ -36,7 +36,6 @@ $(document).ready(function () {
   $(window).trigger("scroll");
 });
 
-
 //hamburger
 $(function () {
   $(".hamBtn").on("click", function () {
@@ -52,72 +51,71 @@ $(function () {
   });
 });
 
-
 //img next
-const slide = document.getElementById('slide');
-const prev = document.getElementById('prev');
-const next = document.getElementById('next');
-const indicator = document.getElementById('indicator');
-const lists = document.querySelectorAll('.list');
+const slide = document.getElementById("slide");
+const prev = document.getElementById("prev");
+const next = document.getElementById("next");
+const indicator = document.getElementById("indicator");
+const lists = document.querySelectorAll(".list");
 const totalSlides = lists.length;
 let count = 0;
 function updateListBackground() {
   for (let i = 0; i < lists.length; i++) {
-    lists[i].style.backgroundColor = i === count % totalSlides ? '#704639' : 'transparent';
+    lists[i].style.backgroundColor =
+      i === count % totalSlides ? "#704639" : "transparent";
   }
 }
 function nextClick() {
-  slide.classList.remove(`slide${count % totalSlides + 1}`);
+  slide.classList.remove(`slide${(count % totalSlides) + 1}`);
   count++;
-  slide.classList.add(`slide${count % totalSlides + 1}`);
+  slide.classList.add(`slide${(count % totalSlides) + 1}`);
   updateListBackground();
 }
 function prevClick() {
-  slide.classList.remove(`slide${count % totalSlides + 1}`);
+  slide.classList.remove(`slide${(count % totalSlides) + 1}`);
   count--;
   if (count < 0) count = totalSlides - 1;
-  slide.classList.add(`slide${count % totalSlides + 1}`);
+  slide.classList.add(`slide${(count % totalSlides) + 1}`);
   updateListBackground();
 }
-next.addEventListener('click', () => {
+next.addEventListener("click", () => {
   nextClick();
 });
-prev.addEventListener('click', () => {
+prev.addEventListener("click", () => {
   prevClick();
 });
-indicator.addEventListener('click', (event) => {
-  if (event.target.classList.contains('list')) {
+indicator.addEventListener("click", (event) => {
+  if (event.target.classList.contains("list")) {
     const index = Array.from(lists).indexOf(event.target);
-    slide.classList.remove(`slide${count % totalSlides + 1}`);
+    slide.classList.remove(`slide${(count % totalSlides) + 1}`);
     count = index;
-    slide.classList.add(`slide${count % totalSlides + 1}`);
+    slide.classList.add(`slide${(count % totalSlides) + 1}`);
     updateListBackground();
-  startAutoPlay();
+    startAutoPlay();
   }
 });
 
 //ふわっと表示
-$(function(){
-  $(window).scroll(function (){
-      $('.p-about,.p-goods,.p-store').each(function(){
-          var position = $(this).offset().top;
-          var scroll = $(window).scrollTop();
-          var windowHeight = $(window).height();
-          if (scroll > position - windowHeight + 200){
-            $(this).addClass('active');
-          }
-      });
+$(function () {
+  $(window).scroll(function () {
+    $(".p-about,.p-goods,.p-store").each(function () {
+      var position = $(this).offset().top;
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (scroll > position - windowHeight + 200) {
+        $(this).addClass("active");
+      }
+    });
   });
 });
 
 //footer list
-$(function(){
-  $('.button1').on('click', function(){
-      $(this).parents('.accordion').find('.content').slideToggle(200);
-      $(this).toggleClass('open');
+$(function () {
+  $(".button1").on("click", function () {
+    $(this).parents(".accordion").find(".content").slideToggle(200);
+    $(this).toggleClass("open");
   });
 });
-
 
 //mail
 const form = document.getElementById("form");
@@ -137,10 +135,9 @@ function update() {
   }
 }
 
-
 //フォーム再送信
-$(function() {
-  if(window.history.replaceState) {
+$(function () {
+  if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
   }
 });
