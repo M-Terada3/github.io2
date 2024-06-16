@@ -52,9 +52,7 @@ $(function () {
 });
 
 //img next
-const slide = document.getElementById("slide");
-const prev = document.getElementById("prev");
-const next = document.getElementById("next");
+const slide = document.getElementById("#slide");
 const indicator = document.getElementById("indicator");
 const lists = document.querySelectorAll(".list");
 const totalSlides = lists.length;
@@ -65,35 +63,29 @@ function updateListBackground() {
       i === count % totalSlides ? "#704639" : "transparent";
   }
 }
-function nextClick() {
-  slide.classList.remove(`slide${(count % totalSlides) + 1}`);
-  count++;
-  slide.classList.add(`slide${(count % totalSlides) + 1}`);
-  updateListBackground();
-}
-function prevClick() {
-  slide.classList.remove(`slide${(count % totalSlides) + 1}`);
-  count--;
-  if (count < 0) count = totalSlides - 1;
-  slide.classList.add(`slide${(count % totalSlides) + 1}`);
-  updateListBackground();
-}
-next.addEventListener("click", () => {
-  nextClick();
-});
-prev.addEventListener("click", () => {
-  prevClick();
-});
-indicator.addEventListener("click", (event) => {
-  if (event.target.classList.contains("list")) {
-    const index = Array.from(lists).indexOf(event.target);
-    slide.classList.remove(`slide${(count % totalSlides) + 1}`);
-    count = index;
-    slide.classList.add(`slide${(count % totalSlides) + 1}`);
-    updateListBackground();
-    startAutoPlay();
+
+$('.slide-wrapper > span').on('click', function(){
+  if($(this).hasClass('next')){
+    $('#slide').animate({'margin-left':'-100%'}, 1000, function(){
+    $('#slide').css('margin-left', '0');
+    $('#slide').append($('#slide > li:first-child'));
+    });
+  } else{
+    $('#slide').prepend($('#slide > li:last-child'));
+    $('#slide').css('margin-left', '-100%');
+    $('#slide').animate({'margin-left':'0'}, 1000);
   }
 });
+indicator.addEventListener("click", (event) => {
+  if (event.target.classList.contains(".list")) {
+    const index = Array.from(lists).indexOf(event.target);
+    '#slide'.classList.remove(`slide${(count % totalSlides) + 1}`);
+    count = index;
+    '#slide'.classList.add(`slide${(count % totalSlides) + 1}`);
+    updateListBackground();
+  }
+});
+
 
 //ふわっと表示
 $(function () {

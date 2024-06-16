@@ -319,7 +319,7 @@ body {
   &__topImage,
   &__bottomImage {
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     object-fit: cover;
     display: block;
   }
@@ -519,34 +519,27 @@ body {
 
   @include sp {
     width: 100vw;
-    height: 300px;
+    height: 400px;
   }
 }
 
 .slide {
-  width: 300%;
-  height: 100%;
   display: flex;
-  transition: all 0.5s;
+  width: calc(100% * 3);
+  padding-inline-start: 0;
+  list-style: none;
 }
 
-.slide img {
-  width: 100%;
+.slide li img {
+  width: 100vw;
+  height: 80vh;
   object-fit: cover;
+  vertical-align: bottom;
+  max-width: 100%;
 
   @include sp {
-    width: 100vw;
+    height: 50vh;
   }
-}
-
-.slide1 {
-  transform: translateX(0);
-}
-.slide2 {
-  transform: translateX(-33.33%);
-}
-.slide3 {
-  transform: translateX(-66.66%);
 }
 
 .next {
@@ -608,7 +601,7 @@ body {
   border: 1.5px solid #704639;
   cursor: pointer;
 }
-.indicator li:first-of-type {
+.indicator li.target {
   background-color: #704639;
 }
 
@@ -739,7 +732,7 @@ body {
     vertical-align: bottom;
 
     @include sp {
-      width: 100%;
+      width: 100vw;
     }
   }
 
