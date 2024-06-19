@@ -51,39 +51,13 @@ $(function () {
   });
 });
 
-//img next
-const slide = document.getElementById("#slide");
-const indicator = document.getElementById("indicator");
-const lists = document.querySelectorAll(".list");
-const totalSlides = lists.length;
-let count = 0;
-function updateListBackground() {
-  for (let i = 0; i < lists.length; i++) {
-    lists[i].style.backgroundColor =
-      i === count % totalSlides ? "#704639" : "transparent";
-  }
-}
 
-$('.slide-wrapper > span').on('click', function(){
-  if($(this).hasClass('next')){
-    $('#slide').animate({'margin-left':'-100%'}, 1000, function(){
-    $('#slide').css('margin-left', '0');
-    $('#slide').append($('#slide > li:first-child'));
-    });
-  } else{
-    $('#slide').prepend($('#slide > li:last-child'));
-    $('#slide').css('margin-left', '-100%');
-    $('#slide').animate({'margin-left':'0'}, 1000);
-  }
-});
-indicator.addEventListener("click", (event) => {
-  if (event.target.classList.contains(".list")) {
-    const index = Array.from(lists).indexOf(event.target);
-    '#slide'.classList.remove(`slide${(count % totalSlides) + 1}`);
-    count = index;
-    '#slide'.classList.add(`slide${(count % totalSlides) + 1}`);
-    updateListBackground();
-  }
+//img next
+$(function () {
+  $('.slider').slick({
+    dots: true,
+    fade: true,
+  });
 });
 
 
